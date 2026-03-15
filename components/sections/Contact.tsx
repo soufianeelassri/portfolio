@@ -49,17 +49,6 @@ export function Contact() {
               Envoyez-moi un email
             </Button>
 
-            <button
-              onClick={copyEmail}
-              className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
-            >
-              {copied ? (
-                <Check className="h-3.5 w-3.5 text-green-500" />
-              ) : (
-                <Copy className="h-3.5 w-3.5" />
-              )}
-              {personalInfo.email}
-            </button>
           </div>
 
           <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">

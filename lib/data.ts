@@ -36,62 +36,11 @@ export const publications = [
 
 export const projects = [
   {
-    id: 1,
-    title: "NeoOLAF",
-    subtitle: "Framework Multi-Agent pour l'Extraction de Connaissances Industrielles",
-    description:
-      "Framework de recherche pour l'extraction d'arbres causaux à partir de documentation de dépannage industriel utilisant la recherche sémantique, la construction itérative d'ontologies et les graphes de connaissances.",
-    longDescription:
-      "NeoOLAF est une architecture agentique développée au LITIS pour modéliser les connaissances causales à partir de données industrielles non structurées.",
-    technologies: [
-      "Python",
-      "LangChain",
-      "LangGraph",
-      "Neo4j",
-      "FastAPI",
-      "LLMs",
-    ],
-    features: [
-      "RAG sémantique avec recherche hybride",
-      "Construction itérative d'ontologies et de graphes de connaissances",
-      "Extraction d'arbres causaux à partir de manuels de dépannage",
-      "Orchestration multi-agent avec LangGraph",
-    ],
-    links: {} as Record<string, string>,
-    status: "active" as const,
-    category: "research" as const,
-  },
-  {
-    id: 2,
-    title: "Framework RAG Multimodal",
-    subtitle: "Système de Recherche d'Information en Santé",
-    description:
-      "Projet de recherche accepté utilisant le RAG multimodal et la recherche hybride pour améliorer l'accès aux informations médicales liées à la ménopause.",
-    longDescription:
-      "Ce framework a été conçu pour combler un manque d'information en santé grâce à la recherche dense-sparse, le traitement multimodal et la génération de rapports personnalisés.",
-    technologies: [
-      "Python",
-      "LangChain",
-      "Transformers",
-      "Hybrid Retrieval",
-      "RAG",
-    ],
-    features: [
-      "Traitement multimodal de documents",
-      "Recherche hybride (dense + sparse)",
-      "Rapports personnalisés tenant compte des symptômes",
-      "Méthodologie d'évaluation revue par les pairs",
-    ],
-    links: { github: "https://github.com/soufianeelassri/menopause-multimodal-rag" } as Record<string, string>,
-    status: "completed" as const,
-    category: "research" as const,
-  },
-  {
     id: 3,
     title: "Fine-tuning SciBERT",
     subtitle: "Classification d'Articles Scientifiques",
     description:
-      "Fine-tuning de SciBERT pour la classification multi-label d'articles scientifiques dans 12 domaines à partir d'un large jeu de données d'abstracts ArXiv.",
+      "Fine-tuning de SciBERT pour la classification multi-label d'articles scientifiques dans 8 domaines à partir d'un large jeu de données d'abstracts ArXiv.",
     longDescription:
       "Pipeline d'expérimentation complet pour la classification de documents scientifiques, incluant la curation de données, le prétraitement et l'analyse d'erreurs.",
     technologies: [
@@ -104,37 +53,12 @@ export const projects = [
     features: [
       "Prétraitement de 15 000+ abstracts ArXiv",
       "Comparaison de têtes de classification (pooling, attention, BiLSTM)",
-      "Micro-F1 de 0.91 sur 12 catégories",
+      "Micro-F1 de 0.91 sur 8 catégories",
       "Visualisation des embeddings avec t-SNE",
     ],
     links: { github: "https://github.com/soufianeelassri/ArxivClassifier" } as Record<string, string>,
     status: "completed" as const,
     category: "research" as const,
-  },
-  {
-    id: 4,
-    title: "Moteur de Recommandation",
-    subtitle: "Système ML en Production @ Epitome",
-    description:
-      "Conception et évaluation d'un moteur de recommandation hybride pour personnaliser les parcours d'apprentissage et améliorer l'engagement utilisateur.",
-    longDescription:
-      "Construit chez Epitome Advisory, ce projet combine la logique de recommandation, l'analyse par agents intelligents et le monitoring en production.",
-    technologies: [
-      "Python",
-      "FastAPI",
-      "Docker",
-      "Prometheus",
-      "Grafana",
-    ],
-    features: [
-      "Pipeline de recommandation hybride",
-      "Augmentation de 20% du taux de clics",
-      "Stack de monitoring et d'évaluation en production",
-      "Workflow de déploiement avec FastAPI",
-    ],
-    links: {} as Record<string, string>,
-    status: "completed" as const,
-    category: "industry" as const,
   },
 ];
 

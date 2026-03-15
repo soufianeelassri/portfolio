@@ -2,8 +2,6 @@
 
 import { motion } from "framer-motion";
 import {
-  Github,
-  Linkedin,
   Mail,
   Download,
   ChevronDown,
@@ -12,11 +10,6 @@ import {
 import { personalInfo } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-
-const socialLinks = [
-  { icon: Github, href: personalInfo.links.github, label: "GitHub" },
-  { icon: Linkedin, href: personalInfo.links.linkedin, label: "LinkedIn" },
-].filter((link) => Boolean(link.href));
 
 export function Hero() {
   return (
@@ -118,25 +111,6 @@ export function Hero() {
               </Button>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.6 }}
-              className="mt-6 flex items-center justify-center gap-3 md:justify-start"
-            >
-              {socialLinks.map(({ icon: Icon, href, label }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={label}
-                  className="rounded-lg p-2 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-                >
-                  <Icon className="h-5 w-5" />
-                </a>
-              ))}
-            </motion.div>
           </div>
         </div>
       </div>
