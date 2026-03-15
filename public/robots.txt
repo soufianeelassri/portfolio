@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://soufiane-nom.vercel.app/sitemap.xml
