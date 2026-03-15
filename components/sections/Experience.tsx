@@ -4,12 +4,12 @@ import { SectionWrapper, SectionHeader } from "@/components/common/SectionWrappe
 import { experience } from "@/lib/data";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
-import { Briefcase, MapPin, Calendar } from "lucide-react";
+import { MapPin, Calendar } from "lucide-react";
 
 export function Experience() {
   return (
     <SectionWrapper id="experience">
-      <SectionHeader title="Experience" subtitle="Professional journey" />
+      <SectionHeader title="Expérience" subtitle="Parcours professionnel" />
 
       <div className="relative">
         {/* Timeline line */}

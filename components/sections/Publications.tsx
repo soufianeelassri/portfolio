@@ -9,79 +9,27 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   FileText,
   Code2,
-  Presentation,
   ChevronDown,
-  Copy,
-  Check,
 } from "lucide-react";
-
-const filters = ["all", "conference", "journal", "preprint"] as const;
-type Filter = (typeof filters)[number];
 
 const statusColors: Record<string, string> = {
   accepted: "bg-green-500/10 text-green-700 dark:text-green-400",
   published: "bg-blue-500/10 text-blue-700 dark:text-blue-400",
-  "in-progress": "bg-yellow-500/10 text-yellow-700 dark:text-yellow-400",
-};
-
-const linkIcons: Record<string, typeof FileText> = {
-  pdf: FileText,
-  code: Code2,
-  slides: Presentation,
 };
 
 export function Publications() {
-  const [filter, setFilter] = useState<Filter>("all");
   const [expandedId, setExpandedId] = useState<number | null>(null);
-  const [copiedId, setCopiedId] = useState<number | null>(null);
-
-  const filtered =
-    filter === "all"
-      ? publications
-      : publications.filter((p) => p.type === filter);
-
-  const generateBibtex = (pub: (typeof publications)[0]) => {
-    const key = pub.authors[0].split(" ").pop()?.toLowerCase() ?? "author";
-    return `@${pub.type === "conference" ? "inproceedings" : "article"}{${key}${pub.year},
-  title={${pub.title}},
-  author={${pub.authors.join(" and ")}},
-  ${pub.type === "conference" ? "booktitle" : "journal"}={${pub.venue}},
-  year={${pub.year}}
-}`;
-  };
-
-  const copyBibtex = async (pub: (typeof publications)[0]) => {
-    await navigator.clipboard.writeText(generateBibtex(pub));
-    setCopiedId(pub.id);
-    setTimeout(() => setCopiedId(null), 2000);
-  };
 
   return (
     <SectionWrapper id="publications">
       <SectionHeader
         title="Publications"
-        subtitle="Peer-reviewed research & preprints"
+        subtitle="Conférences & articles de recherche"
       />
 
-      {/* Filters */}
-      <div className="mb-8 flex flex-wrap gap-2">
-        {filters.map((f) => (
-          <Button
-            key={f}
-            variant={filter === f ? "default" : "outline"}
-            size="sm"
-            onClick={() => setFilter(f)}
-            className="capitalize"
-          >
-            {f}
-          </Button>
-        ))}
-      </div>
-
-      {/* Publication list */}
       <div className="space-y-4">
         <AnimatePresence mode="popLayout">
-          {filtered.map((pub) => (
+          {publications.map((pub) => (
             <motion.article
               key={pub.id}
               layout
@@ -92,13 +40,19 @@ export function Publications() {
             >
               <div className="flex flex-wrap items-start gap-2">
                 <Badge variant="outline" className="text-xs capitalize">
-                  {pub.type}
+                  {pub.type === "conference" ? "conférence" : pub.type}
                 </Badge>
                 <Badge
                   className={`text-xs ${statusColors[pub.status] ?? "bg-muted text-muted-foreground"}`}
                   variant="secondary"
                 >
-                  {pub.status}
+                  {pub.status === "accepted" ? "accepté" : pub.status}
+                </Badge>
+                <Badge
+                  variant="secondary"
+                  className="text-xs bg-purple-500/10 text-purple-700 dark:text-purple-400"
+                >
+                  co-auteur
                 </Badge>
               </div>
 
@@ -143,7 +97,7 @@ export function Publications() {
                 }
                 className="mt-3 flex items-center gap-1 text-sm font-medium text-primary hover:underline"
               >
-                Abstract
+                Résumé
                 <ChevronDown
                   className={`h-3.5 w-3.5 transition-transform ${
                     expandedId === pub.id ? "rotate-180" : ""
@@ -166,35 +120,32 @@ export function Publications() {
 
               {/* Links */}
               <div className="mt-4 flex flex-wrap gap-2">
-                {Object.entries(pub.links).map(([key, url]) => {
-                  const Icon = linkIcons[key] ?? FileText;
-                  return (
-                    <Button
-                      key={key}
-                      variant="outline"
-                      size="sm"
-                      className="h-8 text-xs"
-                      nativeButton={false}
-                      render={<a href={url} />}
-                    >
-                      <Icon className="mr-1.5 h-3.5 w-3.5" />
-                      {key.toUpperCase()}
-                    </Button>
-                  );
-                })}
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="h-8 text-xs"
-                  onClick={() => copyBibtex(pub)}
-                >
-                  {copiedId === pub.id ? (
-                    <Check className="mr-1.5 h-3.5 w-3.5" />
-                  ) : (
-                    <Copy className="mr-1.5 h-3.5 w-3.5" />
-                  )}
-                  BibTeX
-                </Button>
+                {pub.links.pdf !== undefined && (
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="h-8 text-xs"
+                    nativeButton={pub.links.pdf ? false : undefined}
+                    render={pub.links.pdf ? <a href={pub.links.pdf} target="_blank" rel="noopener noreferrer" /> : undefined}
+                    disabled={!pub.links.pdf}
+                  >
+                    <FileText className="mr-1.5 h-3.5 w-3.5" />
+                    Paper PDF
+                  </Button>
+                )}
+                {pub.links.code !== undefined && (
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="h-8 text-xs"
+                    nativeButton={pub.links.code ? false : undefined}
+                    render={pub.links.code ? <a href={pub.links.code} target="_blank" rel="noopener noreferrer" /> : undefined}
+                    disabled={!pub.links.code}
+                  >
+                    <Code2 className="mr-1.5 h-3.5 w-3.5" />
+                    Code
+                  </Button>
+                )}
               </div>
             </motion.article>
           ))}

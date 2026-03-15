@@ -14,18 +14,24 @@ const statusStyles: Record<string, string> = {
     "bg-yellow-500/10 text-yellow-700 dark:text-yellow-400 border-yellow-500/20",
 };
 
+const statusLabels: Record<string, string> = {
+  active: "en cours",
+  completed: "terminé",
+  "in-progress": "en cours",
+};
+
 const linkConfig: Record<string, { icon: typeof Github; label: string }> = {
   github: { icon: Github, label: "Code" },
-  demo: { icon: ExternalLink, label: "Demo" },
-  paper: { icon: FileText, label: "Paper" },
+  demo: { icon: ExternalLink, label: "Démo" },
+  paper: { icon: FileText, label: "Article" },
 };
 
 export function Projects() {
   return (
     <SectionWrapper id="projects">
       <SectionHeader
-        title="Projects"
-        subtitle="Research prototypes & production systems"
+        title="Projets"
+        subtitle="Prototypes de recherche & systèmes en production"
       />
 
       <div className="grid gap-6 md:grid-cols-2">
@@ -46,8 +52,8 @@ export function Projects() {
                 </div>
                 <p className="text-xs text-muted-foreground">
                   {project.category === "research"
-                    ? "Research Project"
-                    : "Industry Project"}
+                    ? "Projet de recherche"
+                    : "Projet industriel"}
                 </p>
               </div>
             </div>
@@ -64,7 +70,7 @@ export function Projects() {
                   variant="outline"
                   className={`flex-shrink-0 text-xs ${statusStyles[project.status] ?? ""}`}
                 >
-                  {project.status}
+                  {statusLabels[project.status] ?? project.status}
                 </Badge>
               </div>
 

@@ -9,8 +9,6 @@ import {
   Mail,
   Github,
   Linkedin,
-  Twitter,
-  BookOpen,
   Copy,
   Check,
   MapPin,
@@ -19,8 +17,6 @@ import {
 const contactLinks = [
   { icon: Github, href: personalInfo.links.github, label: "GitHub" },
   { icon: Linkedin, href: personalInfo.links.linkedin, label: "LinkedIn" },
-  { icon: BookOpen, href: personalInfo.links.googleScholar, label: "Google Scholar" },
-  { icon: Twitter, href: personalInfo.links.twitter, label: "Twitter" },
 ].filter((link) => Boolean(link.href));
 
 export function Contact() {
@@ -36,8 +32,8 @@ export function Contact() {
     <SectionWrapper id="contact">
       <div className="mx-auto max-w-2xl text-center">
         <SectionHeader
-          title="Let's Connect"
-          subtitle="Interested in collaboration, research opportunities, or just want to chat about AI?"
+          title="Restons en contact"
+          subtitle="Intéressé par une collaboration, une opportunité, ou simplement discuter d'IA ?"
         />
 
         <motion.div
@@ -50,7 +46,7 @@ export function Contact() {
           <div className="flex flex-col items-center gap-3">
             <Button size="lg" nativeButton={false} render={<a href={personalInfo.links.email} />}>
               <Mail className="mr-2 h-4 w-4" />
-              Send me an email
+              Envoyez-moi un email
             </Button>
 
             <button

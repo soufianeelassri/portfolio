@@ -4,8 +4,6 @@ import { motion } from "framer-motion";
 import {
   Github,
   Linkedin,
-  Twitter,
-  BookOpen,
   Mail,
   Download,
   ChevronDown,
@@ -13,12 +11,11 @@ import {
 } from "lucide-react";
 import { personalInfo } from "@/lib/data";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 const socialLinks = [
   { icon: Github, href: personalInfo.links.github, label: "GitHub" },
   { icon: Linkedin, href: personalInfo.links.linkedin, label: "LinkedIn" },
-  { icon: BookOpen, href: personalInfo.links.googleScholar, label: "Google Scholar" },
-  { icon: Twitter, href: personalInfo.links.twitter, label: "Twitter" },
 ].filter((link) => Boolean(link.href));
 
 export function Hero() {
@@ -33,9 +30,13 @@ export function Hero() {
             className="flex-shrink-0"
           >
             <div className="relative h-40 w-40 overflow-hidden rounded-full border-2 border-border bg-muted md:h-48 md:w-48">
-              <div className="flex h-full w-full items-center justify-center text-4xl font-bold text-muted-foreground md:text-5xl">
-                S
-              </div>
+              <Image
+                src="/images/photo.png"
+                alt={personalInfo.name}
+                fill
+                className="object-cover"
+                priority
+              />
             </div>
           </motion.div>
 
@@ -99,22 +100,12 @@ export function Hero() {
             >
               <Button
                 size="lg"
-                onClick={() =>
-                  document
-                    .querySelector("#research")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
-              >
-                View Research
-              </Button>
-              <Button
-                size="lg"
                 variant="outline"
                 nativeButton={false}
                 render={<a href="/files/SOUFIANE_ELASSRI_CV.pdf" download />}
               >
                 <Download className="mr-2 h-4 w-4" />
-                Download CV
+                Télécharger CV
               </Button>
               <Button
                 size="lg"

@@ -8,7 +8,6 @@ export function JsonLd() {
     jobTitle: personalInfo.title,
     description: personalInfo.tagline,
     email: personalInfo.email,
-    url: "https://soufiane-nom.vercel.app",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Rouen",
@@ -20,14 +19,12 @@ export function JsonLd() {
     },
     worksFor: {
       "@type": "Organization",
-      name: "LITIS Laboratory, INSA Rouen Normandie",
+      name: "Laboratoire LITIS, INSA Rouen Normandie",
     },
     sameAs: [
       personalInfo.links.github,
       personalInfo.links.linkedin,
-      personalInfo.links.googleScholar,
-      personalInfo.links.twitter,
-    ],
+    ].filter(Boolean),
   };
 
   return (

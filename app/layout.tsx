@@ -17,33 +17,33 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Soufiane [NOM] — AI/ML Research Engineer",
+  title: "Soufiane Elassri — Ingénieur IA",
   description:
-    "Portfolio of Soufiane [NOM], AI/ML Research Engineer specializing in LLMs, RAG, Knowledge Graphs & Multi-Agent Systems. Currently at LITIS Laboratory, INSA Rouen Normandie.",
+    "Portfolio de Soufiane Elassri, Ingénieur en Intelligence Artificielle spécialisé en Machine Learning, Deep Learning, NLP et Data Science.",
   keywords: [
-    "AI Research",
+    "Intelligence Artificielle",
     "Machine Learning",
+    "Deep Learning",
+    "Data Science",
+    "NLP",
     "LLM",
     "RAG",
-    "Knowledge Graphs",
-    "Multi-Agent Systems",
-    "NLP",
+    "Ingénieur IA",
   ],
-  authors: [{ name: "Soufiane [NOM]" }],
+  authors: [{ name: "Soufiane Elassri" }],
   openGraph: {
-    title: "Soufiane [NOM] — AI/ML Research Engineer",
+    title: "Soufiane Elassri — Ingénieur IA",
     description:
-      "Building intelligent systems with LLMs, Knowledge Graphs & Multi-Agent Architectures",
-    url: "https://soufiane-nom.vercel.app",
-    siteName: "Soufiane [NOM] Portfolio",
-    locale: "en_US",
+      "Conception de systèmes intelligents avec le Machine Learning, le Deep Learning et la Data Science",
+    siteName: "Soufiane Elassri Portfolio",
+    locale: "fr_FR",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Soufiane [NOM] — AI/ML Research Engineer",
+    title: "Soufiane Elassri — Ingénieur IA",
     description:
-      "Building intelligent systems with LLMs, Knowledge Graphs & Multi-Agent Architectures",
+      "Conception de systèmes intelligents avec le Machine Learning, le Deep Learning et la Data Science",
   },
   robots: {
     index: true,
@@ -57,7 +57,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="fr" suppressHydrationWarning>
       <body
         className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased`}
       >
