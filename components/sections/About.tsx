@@ -12,33 +12,29 @@ export function About() {
       <SectionHeader title="About" subtitle="Background & research focus" />
 
       <div className="grid gap-12 md:grid-cols-3">
-        {/* Bio */}
         <div className="space-y-4 text-muted-foreground md:col-span-2">
           <p className="text-lg leading-relaxed">
             I&apos;m <span className="font-medium text-foreground">{personalInfo.name}</span>,
-            a final-year engineering student at{" "}
-            <span className="font-medium text-foreground">ENSIASD</span>{" "}
-            specializing in Artificial Intelligence &amp; Data Science. Currently
-            completing my end-of-study internship at the{" "}
+            an AI research engineer trained at{" "}
+            <span className="font-medium text-foreground">ENSIASD</span> and
+            currently working at the{" "}
             <span className="font-medium text-foreground">
               LITIS Laboratory, INSA Rouen Normandie
             </span>
             , France.
           </p>
           <p className="leading-relaxed">
-            My research focuses on designing LLM-based agentic systems that
-            bridge the gap between unstructured industrial documentation and
-            structured knowledge representations. I work at the intersection of
-            Retrieval-Augmented Generation, knowledge graphs, and multi-agent
-            orchestration.
+            My work focuses on LLM-based systems that turn unstructured content
+            into actionable knowledge. I work at the intersection of semantic
+            RAG, knowledge graphs, ontology construction, and multi-agent
+            orchestration for industrial and scientific use cases.
           </p>
           <p className="leading-relaxed">
-            I&apos;m passionate about building AI systems that have real-world
-            impact, from healthcare information retrieval to smart manufacturing.
-            I believe in open science and reproducible research.
+            I&apos;m especially interested in connecting scientific rigor with
+            deployable AI products, from healthcare information retrieval to
+            smart manufacturing and intelligent recommendation systems.
           </p>
 
-          {/* Education */}
           <div className="mt-8 space-y-4">
             <h3 className="text-lg font-semibold text-foreground">Education</h3>
             {education.map((edu) => (
@@ -57,7 +53,6 @@ export function About() {
           </div>
         </div>
 
-        {/* Research Interests */}
         <div>
           <h3 className="mb-4 text-lg font-semibold">Research Interests</h3>
           <div className="flex flex-wrap gap-2">
@@ -84,7 +79,7 @@ export function About() {
               Currently working on
             </h4>
             <p className="text-sm text-muted-foreground">
-              NeoOLAF — a multi-agent framework for extracting causal knowledge
+              NeoOLAF - a multi-agent framework for extracting causal knowledge
               graphs from industrial troubleshooting documentation using LLMs
               and ontologies.
             </p>

@@ -21,7 +21,7 @@ const contactLinks = [
   { icon: Linkedin, href: personalInfo.links.linkedin, label: "LinkedIn" },
   { icon: BookOpen, href: personalInfo.links.googleScholar, label: "Google Scholar" },
   { icon: Twitter, href: personalInfo.links.twitter, label: "Twitter" },
-];
+].filter((link) => Boolean(link.href));
 
 export function Contact() {
   const [copied, setCopied] = useState(false);
@@ -47,7 +47,6 @@ export function Contact() {
           transition={{ duration: 0.5 }}
           className="space-y-6"
         >
-          {/* Email */}
           <div className="flex flex-col items-center gap-3">
             <Button size="lg" nativeButton={false} render={<a href={personalInfo.links.email} />}>
               <Mail className="mr-2 h-4 w-4" />
@@ -67,13 +66,11 @@ export function Contact() {
             </button>
           </div>
 
-          {/* Location */}
           <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
             <MapPin className="h-3.5 w-3.5" />
             {personalInfo.location}
           </div>
 
-          {/* Social links */}
           <div className="flex items-center justify-center gap-3">
             {contactLinks.map(({ icon: Icon, href, label }) => (
               <a

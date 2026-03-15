@@ -19,14 +19,13 @@ const socialLinks = [
   { icon: Linkedin, href: personalInfo.links.linkedin, label: "LinkedIn" },
   { icon: BookOpen, href: personalInfo.links.googleScholar, label: "Google Scholar" },
   { icon: Twitter, href: personalInfo.links.twitter, label: "Twitter" },
-];
+].filter((link) => Boolean(link.href));
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-screen items-center justify-center px-6 overflow-hidden">
+    <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-6">
       <div className="mx-auto max-w-5xl">
         <div className="flex flex-col items-center gap-10 md:flex-row md:items-start md:gap-16">
-          {/* Avatar */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -40,7 +39,6 @@ export function Hero() {
             </div>
           </motion.div>
 
-          {/* Content */}
           <div className="text-center md:text-left">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -52,7 +50,7 @@ export function Hero() {
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
                 </span>
-                Currently @ LITIS Laboratory
+                {personalInfo.currentPosition}
               </div>
             </motion.div>
 
@@ -93,7 +91,6 @@ export function Hero() {
               {personalInfo.location}
             </motion.div>
 
-            {/* CTA buttons */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -114,7 +111,7 @@ export function Hero() {
                 size="lg"
                 variant="outline"
                 nativeButton={false}
-                render={<a href="/files/CV_placeholder.pdf" download />}
+                render={<a href="/files/SOUFIANE_ELASSRI_CV.pdf" download />}
               >
                 <Download className="mr-2 h-4 w-4" />
                 Download CV
@@ -130,7 +127,6 @@ export function Hero() {
               </Button>
             </motion.div>
 
-            {/* Social links */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -154,7 +150,6 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
