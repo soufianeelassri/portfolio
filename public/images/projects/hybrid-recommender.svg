@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" fill="none">
+  <defs>
+    <linearGradient id="bg6" x1="0" y1="0" x2="800" y2="400">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1a1a2e"/>
+    </linearGradient>
+    <linearGradient id="accent6" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="400" fill="url(#bg6)"/>
+  <!-- User query -->
+  <rect x="100" y="150" width="130" height="50" rx="8" fill="none" stroke="#10b981" stroke-width="1.5" opacity="0.4"/>
+  <text x="165" y="172" text-anchor="middle" fill="#10b981" font-size="9" font-family="monospace" opacity="0.7">User Query</text>
+  <text x="165" y="188" text-anchor="middle" fill="#10b981" font-size="7" font-family="monospace" opacity="0.4">"chicken noodles"</text>
+  <!-- Arrow split -->
+  <line x1="240" y1="175" x2="290" y2="120" stroke="#10b981" stroke-width="1.5" opacity="0.3"/>
+  <line x1="240" y1="175" x2="290" y2="240" stroke="#06b6d4" stroke-width="1.5" opacity="0.3"/>
+  <!-- LLM branch (top) -->
+  <rect x="300" y="85" width="120" height="60" rx="10" fill="#10b981" opacity="0.1" stroke="#10b981" stroke-width="1.5" opacity="0.3"/>
+  <text x="360" y="112" text-anchor="middle" fill="#10b981" font-size="10" font-family="monospace" opacity="0.8">GPT-3.5</text>
+  <text x="360" y="128" text-anchor="middle" fill="#10b981" font-size="7" font-family="monospace" opacity="0.5">Query Expansion</text>
+  <!-- BM25 branch (bottom) -->
+  <rect x="300" y="210" width="120" height="60" rx="10" fill="#06b6d4" opacity="0.1" stroke="#06b6d4" stroke-width="1.5" opacity="0.3"/>
+  <text x="360" y="237" text-anchor="middle" fill="#06b6d4" font-size="10" font-family="monospace" opacity="0.8">BM25</text>
+  <text x="360" y="253" text-anchor="middle" fill="#06b6d4" font-size="7" font-family="monospace" opacity="0.5">Keyword Search</text>
+  <!-- Arrows to Weaviate -->
+  <line x1="430" y1="115" x2="490" y2="175" stroke="#10b981" stroke-width="1.5" opacity="0.3"/>
+  <line x1="430" y1="240" x2="490" y2="185" stroke="#06b6d4" stroke-width="1.5" opacity="0.3"/>
+  <!-- Weaviate vector DB -->
+  <rect x="500" y="140" width="140" height="80" rx="12" fill="url(#accent6)" opacity="0.12" stroke="#10b981" stroke-width="1.5" opacity="0.4"/>
+  <text x="570" y="175" text-anchor="middle" fill="#10b981" font-size="12" font-family="monospace" opacity="0.8">Weaviate</text>
+  <text x="570" y="195" text-anchor="middle" fill="#06b6d4" font-size="8" font-family="monospace" opacity="0.5">Hybrid Search</text>
+  <!-- Vector dots inside Weaviate -->
+  <circle cx="520" cy="160" r="3" fill="#10b981" opacity="0.4"/>
+  <circle cx="535" cy="155" r="3" fill="#06b6d4" opacity="0.3"/>
+  <circle cx="528" cy="170" r="3" fill="#10b981" opacity="0.3"/>
+  <!-- Arrow to results -->
+  <line x1="650" y1="180" x2="690" y2="180" stroke="#10b981" stroke-width="1.5" opacity="0.4"/>
+  <polygon points="690,175 700,180 690,185" fill="#10b981" opacity="0.4"/>
+  <!-- Results -->
+  <rect x="710" y="110" width="60" height="22" rx="4" fill="#10b981" opacity="0.15" stroke="#10b981" stroke-width="1" opacity="0.3"/>
+  <text x="740" y="125" text-anchor="middle" fill="#10b981" font-size="7" font-family="sans-serif" opacity="0.7">Product 1</text>
+  <rect x="710" y="140" width="60" height="22" rx="4" fill="#06b6d4" opacity="0.15" stroke="#06b6d4" stroke-width="1" opacity="0.3"/>
+  <text x="740" y="155" text-anchor="middle" fill="#06b6d4" font-size="7" font-family="sans-serif" opacity="0.7">Product 2</text>
+  <rect x="710" y="170" width="60" height="22" rx="4" fill="#10b981" opacity="0.12" stroke="#10b981" stroke-width="1" opacity="0.3"/>
+  <text x="740" y="185" text-anchor="middle" fill="#10b981" font-size="7" font-family="sans-serif" opacity="0.7">Product 3</text>
+  <rect x="710" y="200" width="60" height="22" rx="4" fill="#06b6d4" opacity="0.1" stroke="#06b6d4" stroke-width="1" opacity="0.3"/>
+  <text x="740" y="215" text-anchor="middle" fill="#06b6d4" font-size="7" font-family="sans-serif" opacity="0.7">Product 4</text>
+  <rect x="710" y="230" width="60" height="22" rx="4" fill="#10b981" opacity="0.08" stroke="#10b981" stroke-width="1" opacity="0.2"/>
+  <text x="740" y="245" text-anchor="middle" fill="#10b981" font-size="7" font-family="sans-serif" opacity="0.7">Product 5</text>
+  <!-- Bottom stats -->
+  <text x="165" y="320" text-anchor="middle" fill="#10b981" font-size="9" font-family="monospace" opacity="0.4">550K+ products</text>
+  <text x="360" y="320" text-anchor="middle" fill="#06b6d4" font-size="9" font-family="monospace" opacity="0.4">142 categories</text>
+  <text x="570" y="320" text-anchor="middle" fill="#10b981" font-size="9" font-family="monospace" opacity="0.4">semantic + keyword</text>
+</svg>

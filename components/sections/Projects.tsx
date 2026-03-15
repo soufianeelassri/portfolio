@@ -6,14 +6,6 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Github, ExternalLink, FileText } from "lucide-react";
-import Image from "next/image";
-
-const projectImages: Record<number, string> = {
-  1: "/images/projects/neoolaf.svg",
-  2: "/images/projects/rag-multimodal.svg",
-  3: "/images/projects/scibert.svg",
-  4: "/images/projects/recommendation.svg",
-};
 
 const statusStyles: Record<string, string> = {
   active: "bg-green-500/10 text-green-700 dark:text-green-400 border-green-500/20",
@@ -52,15 +44,6 @@ export function Projects() {
             transition={{ duration: 0.4, delay: i * 0.1 }}
             className="group flex flex-col rounded-xl border border-border bg-card transition-colors hover:border-primary/30"
           >
-            {/* Project image */}
-            <div className="relative h-44 overflow-hidden rounded-t-xl bg-muted/50">
-              <Image
-                src={projectImages[project.id] ?? ""}
-                alt={project.title}
-                fill
-                className="object-cover"
-              />
-            </div>
 
             <div className="flex flex-1 flex-col p-6">
               <div className="mb-3 flex items-start justify-between gap-2">

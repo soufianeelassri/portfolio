@@ -1,6 +1,6 @@
 export const personalInfo = {
   name: "Soufiane Elassri",
-  title: "Ingénieur IA",
+  title: "Ingénieur en Science des Données et Intelligence Artificielle",
   tagline:
     "Passionné par l'intelligence artificielle, le machine learning et la data science — je conçois des systèmes intelligents pour résoudre des problèmes concrets.",
   email: "soufianeelassrii@gmail.com",
@@ -9,7 +9,7 @@ export const personalInfo = {
   education: "Diplôme d'Ingénieur en IA & Data Science @ ENSIASD",
   links: {
     github: "https://github.com/soufianeelassri",
-    linkedin: "https://linkedin.com/in/soufianeelassri",
+    linkedin: "https://www.linkedin.com/in/soufiane-elassri/",
     email: "mailto:soufianeelassrii@gmail.com",
   },
 };
@@ -60,6 +60,85 @@ export const projects = [
     status: "completed" as const,
     category: "research" as const,
   },
+  {
+    id: 4,
+    title: "RAG YouTube Assistant",
+    subtitle: "Chat avec des Vidéos YouTube",
+    description:
+      "Application RAG permettant de discuter avec les transcriptions de vidéos YouTube. Posez des questions sur n'importe quelle vidéo et obtenez des réponses contextuelles via des LLMs locaux.",
+    longDescription:
+      "Pipeline complet d'ingestion de vidéos YouTube, de recherche hybride et de génération de réponses avec monitoring Grafana et évaluation RAG intégrée.",
+    technologies: [
+      "Python",
+      "Streamlit",
+      "Ollama",
+      "Elasticsearch",
+      "Docker",
+      "Grafana",
+      "Sentence Transformers",
+    ],
+    features: [
+      "Ingestion de vidéos via YouTube Data API v3 (vidéos individuelles ou chaînes entières)",
+      "Recherche hybride combinant texte et embeddings",
+      "Optimisation des requêtes avec Chain-of-Thought et ReAct",
+      "Évaluation RAG avec Hit Rate, MRR et LLM-as-Judge",
+    ],
+    links: { github: "https://github.com/soufianeelassri/rag-youtube-assistant" } as Record<string, string>,
+    status: "completed" as const,
+    category: "research" as const,
+  },
+  {
+    id: 5,
+    title: "ExamGenerator",
+    subtitle: "Génération d'Examens par IA",
+    description:
+      "Plateforme d'examens alimentée par l'IA qui génère automatiquement des questions à partir de documents PDF en utilisant Google Gemini AI.",
+    longDescription:
+      "Application full-stack permettant l'upload de PDFs, la génération de questions personnalisables (difficulté, format, nombre), la passation d'examens interactifs avec scoring en temps réel et suivi d'historique.",
+    technologies: [
+      "React",
+      "FastAPI",
+      "MongoDB",
+      "Google Gemini AI",
+      "Tailwind CSS",
+      "JWT",
+      "Docker",
+    ],
+    features: [
+      "Génération automatique de questions depuis des PDFs (QCM, vrai/faux, texte à trous, questions ouvertes)",
+      "Configuration de la difficulté (facile, moyen, difficile) et du nombre de questions (5-50)",
+      "Authentification JWT et suivi de l'historique des examens",
+      "Scoring en temps réel avec feedback détaillé",
+    ],
+    links: { github: "https://github.com/soufianeelassri/ExamGenerator" } as Record<string, string>,
+    status: "completed" as const,
+    category: "research" as const,
+  },
+  {
+    id: 6,
+    title: "LLM Hybrid Recommender System",
+    subtitle: "Système de Recommandation Hybride",
+    description:
+      "Moteur de recommandation combinant la recherche hybride Weaviate avec les suggestions d'OpenAI pour fournir des recommandations de produits intelligentes.",
+    longDescription:
+      "Pipeline de recommandation traitant un catalogue de ~550K produits Amazon, combinant recherche par mots-clés (BM25) et recherche sémantique vectorielle, augmenté par GPT-3.5-turbo pour l'expansion de requêtes.",
+    technologies: [
+      "Python",
+      "OpenAI GPT-3.5",
+      "Weaviate",
+      "Pandas",
+      "Jupyter Notebook",
+    ],
+    features: [
+      "Recherche hybride combinant BM25 et similarité sémantique vectorielle",
+      "Expansion de requêtes augmentée par LLM pour des recommandations plus riches",
+      "Découverte de similarité par proximité d'embeddings (near-object)",
+      "Atténuation du problème de démarrage à froid grâce aux capacités du LLM",
+    ],
+    links: { github: "https://github.com/soufianeelassri/llm-hybrid-recommender-system" } as Record<string, string>,
+    status: "completed" as const,
+    category: "research" as const,
+  },
 ];
 
 
@@ -84,7 +163,7 @@ export const experience = [
   },
   {
     id: 2,
-    title: "Stagiaire Ingénieur de Recherche",
+    title: "Stagiaire Ingénieur en Intelligence Artificielle",
     company: "Epitome",
     companyFull: "Epitome Advisory",
     location: "Casablanca, Maroc",
@@ -101,7 +180,7 @@ export const experience = [
   },
   {
     id: 3,
-    title: "Stagiaire Ingénieur de Recherche",
+    title: "Stagiaire Ingénieur en Intelligence Artificielle",
     company: "Smartflow Technologies",
     companyFull: "Smartflow Technologies",
     location: "Agadir, Maroc",
