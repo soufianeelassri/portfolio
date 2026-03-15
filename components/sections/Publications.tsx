@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { SectionWrapper, SectionHeader } from "@/components/common/SectionWrapper";
 import { publications } from "@/lib/data";
 import { Badge } from "@/components/ui/badge";
@@ -8,8 +7,7 @@ import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   FileText,
-  Code2,
-  ChevronDown,
+  Github,
 } from "lucide-react";
 
 const statusColors: Record<string, string> = {
@@ -18,8 +16,6 @@ const statusColors: Record<string, string> = {
 };
 
 export function Publications() {
-  const [expandedId, setExpandedId] = useState<number | null>(null);
-
   return (
     <SectionWrapper id="publications">
       <SectionHeader
@@ -78,71 +74,32 @@ export function Publications() {
               </p>
 
               <p className="mt-1 text-sm text-muted-foreground">
-                {pub.venue} &middot; {pub.year}
+                {pub.venue}
               </p>
-
-              {/* Tags */}
-              <div className="mt-3 flex flex-wrap gap-1.5">
-                {pub.tags.map((tag) => (
-                  <Badge key={tag} variant="secondary" className="text-xs font-normal">
-                    {tag}
-                  </Badge>
-                ))}
-              </div>
-
-              {/* Abstract toggle */}
-              <button
-                onClick={() =>
-                  setExpandedId(expandedId === pub.id ? null : pub.id)
-                }
-                className="mt-3 flex items-center gap-1 text-sm font-medium text-primary hover:underline"
-              >
-                Résumé
-                <ChevronDown
-                  className={`h-3.5 w-3.5 transition-transform ${
-                    expandedId === pub.id ? "rotate-180" : ""
-                  }`}
-                />
-              </button>
-
-              <AnimatePresence>
-                {expandedId === pub.id && (
-                  <motion.p
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    className="overflow-hidden text-sm leading-relaxed text-muted-foreground"
-                  >
-                    <span className="block pt-2">{pub.abstract}</span>
-                  </motion.p>
-                )}
-              </AnimatePresence>
 
               {/* Links */}
               <div className="mt-4 flex flex-wrap gap-2">
-                {pub.links.pdf !== undefined && (
+                {pub.links.pdf && (
                   <Button
                     variant="outline"
                     size="sm"
                     className="h-8 text-xs"
-                    nativeButton={pub.links.pdf ? false : undefined}
-                    render={pub.links.pdf ? <a href={pub.links.pdf} target="_blank" rel="noopener noreferrer" /> : undefined}
-                    disabled={!pub.links.pdf}
+                    nativeButton={false}
+                    render={<a href={pub.links.pdf} target="_blank" rel="noopener noreferrer" />}
                   >
                     <FileText className="mr-1.5 h-3.5 w-3.5" />
                     Paper PDF
                   </Button>
                 )}
-                {pub.links.code !== undefined && (
+                {pub.links.code && (
                   <Button
                     variant="outline"
                     size="sm"
                     className="h-8 text-xs"
-                    nativeButton={pub.links.code ? false : undefined}
-                    render={pub.links.code ? <a href={pub.links.code} target="_blank" rel="noopener noreferrer" /> : undefined}
-                    disabled={!pub.links.code}
+                    nativeButton={false}
+                    render={<a href={pub.links.code} target="_blank" rel="noopener noreferrer" />}
                   >
-                    <Code2 className="mr-1.5 h-3.5 w-3.5" />
+                    <Github className="mr-1.5 h-3.5 w-3.5" />
                     Code
                   </Button>
                 )}

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" fill="none">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="800" y2="400">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1a2332"/>
+    </linearGradient>
+    <linearGradient id="accent2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="400" fill="url(#bg2)"/>
+  <!-- Document stack -->
+  <rect x="120" y="130" width="120" height="160" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+  <rect x="135" y="155" width="60" height="4" rx="2" fill="#10b981" opacity="0.6"/>
+  <rect x="135" y="167" width="90" height="3" rx="1.5" fill="#475569" opacity="0.5"/>
+  <rect x="135" y="177" width="80" height="3" rx="1.5" fill="#475569" opacity="0.4"/>
+  <rect x="135" y="187" width="85" height="3" rx="1.5" fill="#475569" opacity="0.3"/>
+  <!-- Image icon on doc -->
+  <rect x="135" y="210" width="50" height="40" rx="4" fill="#10b981" opacity="0.15" stroke="#10b981" stroke-width="1" opacity="0.3"/>
+  <circle cx="150" cy="224" r="6" fill="#10b981" opacity="0.3"/>
+  <path d="M138 245 l15-12 8 6 12-10 12 16" fill="#10b981" opacity="0.2"/>
+  <!-- Arrow from docs to retrieval -->
+  <path d="M250 200 h60" stroke="#10b981" stroke-width="2" opacity="0.5" stroke-dasharray="6 4"/>
+  <polygon points="310,195 320,200 310,205" fill="#10b981" opacity="0.5"/>
+  <!-- Retrieval engine -->
+  <rect x="330" y="150" width="140" height="100" rx="12" fill="#1e293b" stroke="url(#accent2)" stroke-width="1.5"/>
+  <text x="400" y="190" text-anchor="middle" fill="#10b981" font-size="11" font-family="monospace" opacity="0.8">Hybrid</text>
+  <text x="400" y="210" text-anchor="middle" fill="#3b82f6" font-size="11" font-family="monospace" opacity="0.8">Retrieval</text>
+  <!-- Dense + Sparse indicators -->
+  <rect x="345" y="165" width="50" height="18" rx="9" fill="#10b981" opacity="0.15" stroke="#10b981" stroke-width="1" opacity="0.3"/>
+  <text x="370" y="178" text-anchor="middle" fill="#10b981" font-size="8" font-family="sans-serif">Dense</text>
+  <rect x="405" y="165" width="50" height="18" rx="9" fill="#3b82f6" opacity="0.15" stroke="#3b82f6" stroke-width="1" opacity="0.3"/>
+  <text x="430" y="178" text-anchor="middle" fill="#3b82f6" font-size="8" font-family="sans-serif">Sparse</text>
+  <!-- Arrow to output -->
+  <path d="M480 200 h60" stroke="#3b82f6" stroke-width="2" opacity="0.5" stroke-dasharray="6 4"/>
+  <polygon points="540,195 550,200 540,205" fill="#3b82f6" opacity="0.5"/>
+  <!-- Response/Chat -->
+  <rect x="560" y="140" width="140" height="120" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+  <rect x="575" y="160" width="80" height="8" rx="4" fill="#10b981" opacity="0.3"/>
+  <rect x="575" y="176" width="110" height="4" rx="2" fill="#475569" opacity="0.3"/>
+  <rect x="575" y="186" width="95" height="4" rx="2" fill="#475569" opacity="0.25"/>
+  <rect x="575" y="196" width="100" height="4" rx="2" fill="#475569" opacity="0.2"/>
+  <!-- Health cross icon -->
+  <rect x="610" y="215" width="20" height="6" rx="3" fill="#10b981" opacity="0.5"/>
+  <rect x="617" y="208" width="6" height="20" rx="3" fill="#10b981" opacity="0.5"/>
+  <!-- Decorative -->
+  <circle cx="80" cy="80" r="40" fill="#10b981" opacity="0.03"/>
+  <circle cx="720" cy="320" r="50" fill="#3b82f6" opacity="0.03"/>
+</svg>

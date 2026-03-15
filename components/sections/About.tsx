@@ -47,8 +47,8 @@ export function About() {
           className="leading-relaxed"
         >
           Je m&apos;intéresse particulièrement à connecter la rigueur scientifique
-          avec des produits IA déployables, que ce soit dans le domaine de la
-          santé, de l&apos;industrie intelligente ou des systèmes de recommandation.
+          avec des produits IA déployables, en explorant des domaines variés
+          où l&apos;intelligence artificielle peut avoir un impact concret.
         </motion.p>
 
         <motion.div

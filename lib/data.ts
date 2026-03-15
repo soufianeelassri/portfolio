@@ -5,7 +5,7 @@ export const personalInfo = {
     "Passionné par l'intelligence artificielle, le machine learning et la data science — je conçois des systèmes intelligents pour résoudre des problèmes concrets.",
   email: "soufianeelassrii@gmail.com",
   location: "Rouen, France",
-  currentPosition: "Stagiaire Ingénieur IA @ Laboratoire LITIS, INSA Rouen Normandie",
+  currentPosition: "Stagiaire Ingénieur de Recherche @ Laboratoire LITIS, INSA Rouen Normandie",
   education: "Diplôme d'Ingénieur en IA & Data Science @ ENSIASD",
   links: {
     github: "https://github.com/soufianeelassri",
@@ -27,7 +27,7 @@ export const publications = [
     abstract:
       "Framework RAG multimodal évalué par les pairs, conçu pour améliorer l'accès aux informations médicales liées à la ménopause. Le système combine une recherche hybride dense-sparse, le suivi des symptômes et la génération de rapports personnalisés.",
     links: {
-      pdf: "",
+      pdf: "/files/Elassri_MultimodalMenopause.pdf",
       code: "https://github.com/soufianeelassri/menopause-multimodal-rag",
     } as Record<string, string>,
     tags: ["RAG", "Multimodal", "Healthcare AI"],
@@ -138,35 +138,11 @@ export const projects = [
   },
 ];
 
-export const skills = {
-  languages: [
-    { name: "Python" },
-    { name: "SQL" },
-    { name: "R" },
-    { name: "Java" },
-    { name: "JavaScript/TypeScript" },
-  ],
-  frameworks: [
-    { name: "LangChain / LangGraph" },
-    { name: "PyTorch" },
-    { name: "Hugging Face Transformers" },
-    { name: "FastAPI" },
-    { name: "TensorFlow" },
-  ],
-  tools: [
-    { name: "Git" },
-    { name: "Docker" },
-    { name: "Apache Spark" },
-    { name: "MLflow" },
-    { name: "Kubernetes" },
-    { name: "AWS / GCP / Azure" },
-  ],
-};
 
 export const experience = [
   {
     id: 1,
-    title: "Stagiaire Ingénieur IA",
+    title: "Stagiaire Ingénieur de Recherche",
     company: "Laboratoire LITIS",
     companyFull: "Laboratoire LITIS, INSA Rouen Normandie",
     location: "Rouen, France",
@@ -184,7 +160,7 @@ export const experience = [
   },
   {
     id: 2,
-    title: "Stagiaire Ingénieur IA",
+    title: "Stagiaire Ingénieur de Recherche",
     company: "Epitome",
     companyFull: "Epitome Advisory",
     location: "Casablanca, Maroc",
@@ -201,7 +177,7 @@ export const experience = [
   },
   {
     id: 3,
-    title: "Stagiaire Ingénieur IA",
+    title: "Stagiaire Ingénieur de Recherche",
     company: "Smartflow Technologies",
     companyFull: "Smartflow Technologies",
     location: "Agadir, Maroc",
@@ -253,9 +229,9 @@ export const education = [
   },
   {
     id: 2,
-    degree: "Diplôme Universitaire de Technologie (DUT)",
+    degree: "Diplôme Universitaire de Technologie",
     field: "Informatique Décisionnelle et Science des Données",
-    institution: "École Supérieure de Technologie",
+    institution: "École Supérieure de Technologie (EST)",
     location: "Essaouira, Maroc",
     period: "Sep 2021 - Juin 2023",
     description:
@@ -270,7 +246,6 @@ export const navLinks = [
   { label: "À propos", href: "#about" },
   { label: "Publications", href: "#publications" },
   { label: "Projets", href: "#projects" },
-  { label: "Compétences", href: "#skills" },
   { label: "Expérience", href: "#experience" },
   { label: "Contact", href: "#contact" },
 ];

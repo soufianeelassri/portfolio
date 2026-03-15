@@ -5,7 +5,15 @@ import { projects } from "@/lib/data";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Github, ExternalLink, FileText, ArrowUpRight } from "lucide-react";
+import { Github, ExternalLink, FileText } from "lucide-react";
+import Image from "next/image";
+
+const projectImages: Record<number, string> = {
+  1: "/images/projects/neoolaf.svg",
+  2: "/images/projects/rag-multimodal.svg",
+  3: "/images/projects/scibert.svg",
+  4: "/images/projects/recommendation.svg",
+};
 
 const statusStyles: Record<string, string> = {
   active: "bg-green-500/10 text-green-700 dark:text-green-400 border-green-500/20",
@@ -44,18 +52,14 @@ export function Projects() {
             transition={{ duration: 0.4, delay: i * 0.1 }}
             className="group flex flex-col rounded-xl border border-border bg-card transition-colors hover:border-primary/30"
           >
-            {/* Project image placeholder */}
-            <div className="flex h-44 items-center justify-center rounded-t-xl bg-muted/50">
-              <div className="text-center">
-                <div className="mx-auto mb-2 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                  <ArrowUpRight className="h-6 w-6 text-primary" />
-                </div>
-                <p className="text-xs text-muted-foreground">
-                  {project.category === "research"
-                    ? "Projet de recherche"
-                    : "Projet industriel"}
-                </p>
-              </div>
+            {/* Project image */}
+            <div className="relative h-44 overflow-hidden rounded-t-xl bg-muted/50">
+              <Image
+                src={projectImages[project.id] ?? ""}
+                alt={project.title}
+                fill
+                className="object-cover"
+              />
             </div>
 
             <div className="flex flex-1 flex-col p-6">
