@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/common/ThemeProvider";
 import { JsonLd } from "./json-ld";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const inter = Inter({
@@ -65,6 +66,7 @@ export default function RootLayout({
           <JsonLd />
           {children}
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
